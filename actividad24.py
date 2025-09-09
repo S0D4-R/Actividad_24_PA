@@ -16,8 +16,13 @@ def fibonacci(n):
 def aparaciones_letras():
     pass
 
-def string_reversed():
-    pass
+def string_reversed(list, index, new_list = []):
+    if (index*-1) == (len(list)-1):
+        new_list.append(list[0])
+        return "5".join(new_list)
+    else:
+        new_list.append(list[index-1])
+        return string_reversed(list, index-1)
 
 def potencia(base, exponente):
     if exponente == 0:
@@ -42,7 +47,10 @@ while key:
             case "4":
                 pass
             case "5":
-                cadena_a_invertir = None
+                cadena_a_invertir = input("Coloque su cadena: ")
+                print(string_reversed(list(cadena_a_invertir), 0))
+
+                #print(string_reversed(cadena_a_invertir_x, 0))
             case "6":
                 base = int(input("Coloque la base: "))
                 exponent = int(input("Coloque el exponente: "))
