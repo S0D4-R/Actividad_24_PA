@@ -13,13 +13,18 @@ def suma_n_naturales(n):
 def fibonacci(n):
     pass
 
-def aparaciones_letras():
-    pass
+def aparaciones_letras(lista, letra, index=0, counter=0):
+    if index == (len(lista)-1):
+        return counter
+    else:
+        if letra.lower() == lista[index].lower():
+            counter+=1
+        return aparaciones_letras(lista,letra,index+1,counter)
 
 def string_reversed(list, index, new_list = []):
     if (index*-1) == (len(list)-1):
         new_list.append(list[0])
-        return "5".join(new_list)
+        return "".join(new_list)
     else:
         new_list.append(list[index-1])
         return string_reversed(list, index-1)
@@ -45,7 +50,9 @@ while key:
             case "3":
                 pass
             case "4":
-                pass
+                string_to_evaluate = input("Coloque la string a evaluar: ")
+                letter_to_e = input("Coloque una letra a evaluar: ")
+                print(f"El número de veces que la letra {letter_to_e} aparece en el texto es de: {aparaciones_letras(list(string_to_evaluate),letter_to_e)}")
             case "5":
                 cadena_a_invertir = input("Coloque su cadena: ")
                 print(string_reversed(list(cadena_a_invertir), 0))
