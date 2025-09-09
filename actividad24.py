@@ -1,0 +1,53 @@
+def factorial_x(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial_x(n-1)
+
+def suma_n_naturales(n):
+    if n == 0:
+        return "Finalizado"
+    else:
+        return n + suma_n_naturales(n-1)
+
+def fibonacci(n):
+    pass
+
+def aparaciones_letras():
+    pass
+
+def string_reversed():
+    pass
+
+def potencia(base, exponente):
+    if exponente == 0:
+        return 1
+    else:
+        return base * potencia(base, exponente-1)
+
+key = True
+while key:
+    try:
+        calc_ops = input("----------------Bienvenido al menú----------------\n1. Factorial de un número\n2. Suma de los primero números naturales\n3. N númeor fibonacci\n4. Cantidad de apariciones de una letra\n5. Cadena invertida\n6. Calcular potencia de un número n")
+
+        match calc_ops:
+            case "1":
+                fact = int(input("Coloque el número: "))
+                print(f"El factorial de {fact} es {factorial_x(fact)}")
+            case "2":
+                natural = int(input("Coloque el número: "))
+                print(f"La suma de todos los números de {natural} es {suma_n_naturales(natural)}")
+            case "3":
+                pass
+            case "4":
+                pass
+            case "5":
+                cadena_a_invertir = None
+            case "6":
+                base = int(input("Coloque la base: "))
+                exponent = int(input("Coloque el exponente: "))
+                print(f"\nLa potencia de {base} elevado a la {exponent} es {potencia(base, exponent)}\n\n")
+            case "7":
+                key = False
+    except Exception as e:
+        print(f"Hubo un error inesperado: {e}")
